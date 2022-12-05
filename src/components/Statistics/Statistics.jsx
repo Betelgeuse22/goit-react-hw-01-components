@@ -15,15 +15,15 @@ export const Statistics = ({ title, stats }) => {
       {title && <StatisticTitel>{title}</StatisticTitel>}
 
       <StatisticList>
-        {stats.map(stat => (
+        {stats.map(({id, label, percentage}) => (
           <StatisticItem
-            key={stat.id}
+            key={id}
             style={{
               backgroundColor: getRandomHexColor(),
             }}
           >
-            <StatisticData>{stat.label}</StatisticData>
-            <StatisticData>{stat.percentage}%</StatisticData>
+            <StatisticData>{label}</StatisticData>
+            <StatisticData>{percentage}%</StatisticData>
           </StatisticItem>
         ))}
       </StatisticList>
